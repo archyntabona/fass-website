@@ -1,0 +1,131 @@
+.footer {
+  position: relative;
+  background: var(--bg-darker);
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  margin-top: auto;
+  overflow: hidden;
+
+  .footer-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+  }
+
+  &-brand {
+    max-width: 400px;
+    
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-sm);
+    }
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    
+    .footer-logo-img {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  &-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary) !important;
+    font-size: 0.9rem !important;
+    
+    svg {
+      color: var(--accent-primary);
+    }
+  }
+
+  &-nav {
+    display: flex;
+    gap: var(--spacing-xl);
+  }
+
+  &-col {
+    h4 {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    ul li {
+      margin-bottom: 0.75rem;
+      
+      a {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        transition: var(--transition-base);
+        
+        &:hover {
+          color: var(--accent-primary);
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    border-top: 1px solid var(--glass-border);
+    padding-top: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    
+    p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    
+    .footer-tagline {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &-top {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+    
+    &-nav {
+      gap: var(--spacing-lg);
+    }
+    
+    &-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+}

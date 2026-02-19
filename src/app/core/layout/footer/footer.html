@@ -1,0 +1,45 @@
+<footer class="footer">
+  <div class="footer-glow"></div>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png" alt="FASS Services" class="footer-logo-img">
+        </div>
+        <p>{{ t().footer.tagline }}</p>
+        <p class="footer-location">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          {{ t().footer.location }}
+        </p>
+      </div>
+      
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>{{ t().footer.navigate }}</h4>
+          <ul>
+            <li><a routerLink="/">{{ t().nav.home }}</a></li>
+            <li><a routerLink="/about">{{ t().nav.about }}</a></li>
+            <li><a routerLink="/initiatives">{{ t().nav.initiatives }}</a></li>
+            <li><a routerLink="/team">{{ t().nav.team }}</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>{{ t().footer.connect }}</h4>
+          <ul>
+            <li><a routerLink="/contact">{{ t().nav.contact }}</a></li>
+            <li><a href="mailto:info&#64;fass-services.com">{{ t().footer.emailUs }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} {{ t().footer.copyright }}</p>
+      <p class="footer-tagline">{{ t().footer.builtWith }}</p>
+    </div>
+  </div>
+</footer>
