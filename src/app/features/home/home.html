@@ -1,0 +1,133 @@
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+    <div class="hero-orb hero-orb--3"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <span class="hero-badge animate-fade-in">{{ t().home.badge }}</span>
+       <h1 class="hero-title animate-fade-in animate-delay-1">
+         {{ t().home.title1 }} <span class="gradient-text">{{ t().home.titleHighlight }}</span><br>
+         {{ t().home.title2 }}
+       </h1>
+       <p class="hero-subtitle animate-fade-in animate-delay-2">
+         {{ t().home.subtitle }}
+       </p>
+       <div class="hero-actions animate-fade-in animate-delay-3">
+         <a routerLink="/initiatives" class="btn btn--primary">
+           {{ t().home.cta1 }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+         </a>
+         <a routerLink="/about" class="btn btn--secondary">{{ t().home.cta2 }}</a>
+      </div>
+    </div>
+    <div class="hero-visual animate-fade-in animate-delay-4">
+      <div class="hero-card hero-card--1 glass-card">
+        <div class="hero-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+         <span>{{ t().home.card1 }}</span>
+       </div>
+       <div class="hero-card hero-card--2 glass-card">
+         <div class="hero-card-icon">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+             <circle cx="12" cy="12" r="10"/>
+             <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+           </svg>
+         </div>
+         <span>{{ t().home.card2 }}</span>
+       </div>
+       <div class="hero-card hero-card--3 glass-card">
+         <div class="hero-card-icon">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+             <circle cx="9" cy="7" r="4"/>
+             <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+           </svg>
+         </div>
+         <span>{{ t().home.card3 }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-section-wrapper [badge]="t().home.aboutBadge" [title]="t().home.aboutTitle" [subtitle]="t().home.aboutSubtitle" background="gradient">
+   <div class="about-grid">
+     <div class="about-content">
+       <p class="about-lead">{{ t().home.aboutLead }} <strong>{{ t().home.aboutCountry }}</strong>.</p>
+       <p>{{ t().home.aboutText }}</p>
+       <div class="about-stats">
+         <div class="stat">
+           <span class="stat-value gradient-text">2</span>
+           <span class="stat-label">{{ t().home.statsCountries }}</span>
+         </div>
+         <div class="stat">
+           <span class="stat-value gradient-text">5+</span>
+           <span class="stat-label">{{ t().home.statsProjects }}</span>
+         </div>
+         <div class="stat">
+           <span class="stat-value gradient-text">100%</span>
+           <span class="stat-label">{{ t().home.statsCommitted }}</span>
+         </div>
+       </div>
+       <a routerLink="/about" class="btn btn--secondary mt-md">{{ t().home.fullStory }}</a>
+    </div>
+     <div class="about-visual">
+       <div class="about-card glass-card">
+         <h4>{{ t().home.missionTitle }}</h4>
+         <p>{{ t().home.missionText }}</p>
+       </div>
+     </div>
+  </div>
+</app-section-wrapper>
+
+<app-section-wrapper [badge]="t().home.initBadge" [title]="t().home.initTitle" [subtitle]="t().home.initSubtitle" background="default">
+   <div class="initiatives-grid">
+     <app-card 
+       [title]="t().home.fassTech" 
+       [description]="t().home.fassTechDesc"
+       link="/initiatives"
+       [linkText]="t().home.learnMore">
+     </app-card>
+     <app-card 
+       [title]="t().home.fassAcademy" 
+       [description]="t().home.fassAcademyDesc"
+       link="/initiatives"
+       [linkText]="t().home.comingSoon">
+     </app-card>
+     <app-card 
+       [title]="t().home.fassHealth" 
+       [description]="t().home.fassHealthDesc"
+       link="/initiatives"
+       [linkText]="t().home.comingSoon">
+     </app-card>
+   </div>
+</app-section-wrapper>
+
+<section class="cta-section">
+  <div class="cta-bg">
+    <div class="cta-orb cta-orb--1"></div>
+    <div class="cta-orb cta-orb--2"></div>
+  </div>
+   <div class="container">
+     <div class="cta-content glass-card">
+       <h2>{{ t().home.ctaTitle1 }} <span class="gradient-text">{{ t().home.ctaTitleHighlight }}</span>?</h2>
+       <p>{{ t().home.ctaText }}</p>
+       <div class="cta-actions">
+         <a routerLink="/contact" class="btn btn--primary">
+           {{ t().home.ctaBtn1 }}
+           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+             <path d="M5 12h14M12 5l7 7-7 7"/>
+           </svg>
+         </a>
+         <a routerLink="/team" class="btn btn--ghost">{{ t().home.ctaBtn2 }}</a>
+       </div>
+     </div>
+   </div>
+</section>

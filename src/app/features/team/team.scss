@@ -1,0 +1,140 @@
+.page-hero {
+  position: relative;
+  padding: calc(var(--header-height) + var(--spacing-xl)) 0 var(--spacing-xl);
+  text-align: center;
+  overflow: hidden;
+
+  &-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    
+    &--1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(99, 102, 241, 0.1);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    &--2 {
+      width: 300px;
+      height: 300px;
+      background: rgba(139, 92, 246, 0.08);
+      bottom: -100px;
+      right: 10%;
+    }
+  }
+
+  h1 { margin-bottom: var(--spacing-sm); }
+}
+
+.page-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-member {
+  overflow: hidden;
+  text-align: center;
+  
+  .member-image {
+    position: relative;
+    height: 280px;
+    margin: calc(var(--spacing-md) * -1);
+    margin-bottom: 0;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-slow);
+    }
+    
+    .member-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg-dark) 0%, transparent 50%);
+    }
+  }
+  
+  &:hover .member-image img {
+    transform: scale(1.05);
+  }
+  
+  .member-info {
+    padding: var(--spacing-md);
+    position: relative;
+    margin-top: -40px;
+    
+    h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+    }
+    
+    .member-role {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent-gradient);
+      color: white;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .member-bio {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+  }
+}
+
+.join-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  p {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+.join-actions {
+  display: flex;
+  justify-content: center;
+}

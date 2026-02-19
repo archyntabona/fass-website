@@ -1,0 +1,126 @@
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <div class="page-hero-orb page-hero-orb--1"></div>
+    <div class="page-hero-orb page-hero-orb--2"></div>
+  </div>
+  <div class="container">
+     <span class="page-badge animate-fade-in">{{ t().contact.badge }}</span>
+     <h1 class="animate-fade-in animate-delay-1">{{ t().contact.title }} <span class="gradient-text">{{ t().contact.titleHighlight }}</span></h1>
+     <p class="page-subtitle animate-fade-in animate-delay-2">{{ t().contact.subtitle }}</p>
+   </div>
+</section>
+
+<app-section-wrapper background="default">
+   <div class="contact-container">
+     <div class="contact-info glass-card">
+       <h3>{{ t().contact.infoTitle }}</h3>
+       <p>{{ t().contact.infoText }}</p>
+       
+       <div class="info-items">
+         <div class="info-item">
+           <div class="info-icon">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+               <polyline points="22,6 12,13 2,6"/>
+             </svg>
+           </div>
+           <div>
+             <strong>{{ t().contact.email }}</strong>
+             <a href="mailto:info&#64;fass-services.com">info&#64;fass-services.com</a>
+           </div>
+         </div>
+         
+         <div class="info-item">
+           <div class="info-icon">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+               <circle cx="12" cy="10" r="3"/>
+             </svg>
+           </div>
+           <div>
+             <strong>{{ t().contact.locations }}</strong>
+             <span>{{ t().contact.locationValue }}</span>
+           </div>
+         </div>
+       </div>
+     </div>
+
+    <div class="contact-form-wrapper glass-card">
+       <div *ngIf="submitSuccess" class="success-message">
+         <div class="success-icon">
+           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+             <polyline points="22 4 12 14.01 9 11.01"/>
+           </svg>
+         </div>
+         <h3>{{ t().contact.successTitle }}</h3>
+         <p>{{ t().contact.successText }}</p>
+         <button class="btn btn--secondary mt-md" (click)="submitSuccess = false">{{ t().contact.sendAnother }}</button>
+       </div>
+
+       <form *ngIf="!submitSuccess" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+         <h3>{{ t().contact.formTitle }}</h3>
+         
+         <div class="form-group">
+           <label for="name">{{ t().contact.nameLabel }}</label>
+           <input 
+             type="text" 
+             id="name" 
+             name="name" 
+             [placeholder]="t().contact.namePlaceholder"
+             [(ngModel)]="formData.name" 
+             required 
+             #name="ngModel"
+             [class.error]="name.invalid && (name.dirty || name.touched)">
+           <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+             {{ t().contact.nameError }}
+           </div>
+         </div>
+
+         <div class="form-group">
+           <label for="email">{{ t().contact.emailLabel }}</label>
+           <input 
+             type="email" 
+             id="email" 
+             name="email"
+             [placeholder]="t().contact.emailPlaceholder"
+             [(ngModel)]="formData.email" 
+             required 
+             email
+             #email="ngModel"
+             [class.error]="email.invalid && (email.dirty || email.touched)">
+           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+             {{ t().contact.emailError }}
+           </div>
+         </div>
+
+         <div class="form-group">
+           <label for="message">{{ t().contact.messageLabel }}</label>
+           <textarea 
+             id="message" 
+             name="message"
+             [placeholder]="t().contact.messagePlaceholder"
+             [(ngModel)]="formData.message" 
+             required 
+             minlength="10"
+             #message="ngModel"
+             [class.error]="message.invalid && (message.dirty || message.touched)"></textarea>
+           <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error-message">
+             {{ t().contact.messageError }}
+           </div>
+         </div>
+
+         <button type="submit" class="btn btn--primary btn--full" [disabled]="!contactForm.form.valid || isSubmitting">
+           <span *ngIf="!isSubmitting">{{ t().contact.sendBtn }}</span>
+           <span *ngIf="isSubmitting">{{ t().contact.sending }}</span>
+           <svg *ngIf="!isSubmitting" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+             <line x1="22" y1="2" x2="11" y2="13"/>
+             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+           </svg>
+         </button>
+         
+         <p *ngIf="submitError" class="error-message mt-sm text-center">{{ t().contact.errorText }}</p>
+       </form>
+    </div>
+  </div>
+</app-section-wrapper>
