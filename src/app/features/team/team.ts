@@ -17,16 +17,16 @@ export class Team {
 
   teamMembers = [
     {
-      name: 'Sebastien Pambu',
-      role: 'Co-Founder & Lead Engineer',
-      bio: 'Visionary leader with a passion for technology and community development.',
+      key: 'sebastien' as const,
       image: 'assets/images/sebastien-pambu.jpg'
     },
     {
-      name: 'Archy Ntabona',
-      role: 'Co-Founder & Operations',
-      bio: 'Strategic thinker ensuring operational excellence and project success.',
+      key: 'archy' as const,
       image: 'assets/images/archy-ntabona.jpg'
     }
   ];
+
+  getMember(key: 'sebastien' | 'archy') {
+    return this.t().team.members[key];
+  }
 }

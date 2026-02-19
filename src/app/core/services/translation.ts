@@ -120,7 +120,19 @@ const translations = {
       joinBadge: 'Opportunities',
       joinTitle: 'Join Our Mission',
       joinText: 'We are always looking for talented individuals who share our passion for technology and community development.',
-      joinBtn: 'Get in Touch'
+      joinBtn: 'Get in Touch',
+      members: {
+        sebastien: {
+          name: 'Sebastien Pambu',
+          role: 'Co-Founder & Lead Engineer',
+          bio: 'Visionary leader with a passion for technology and community development.'
+        },
+        archy: {
+          name: 'Archy Ntabona',
+          role: 'Co-Founder & Operations',
+          bio: 'Strategic thinker ensuring operational excellence and project success.'
+        }
+      }
     },
     contact: {
       badge: 'Get in Touch',
@@ -276,7 +288,19 @@ const translations = {
       joinBadge: 'Opportunités',
       joinTitle: 'Rejoignez Notre Mission',
       joinText: 'Nous recherchons toujours des personnes talentueuses qui partagent notre passion pour la technologie et le développement communautaire.',
-      joinBtn: 'Contactez-nous'
+      joinBtn: 'Contactez-nous',
+      members: {
+        sebastien: {
+          name: 'Sebastien Pambu',
+          role: 'Co-Fondateur & Ingénieur Principal',
+          bio: 'Leader visionnaire passionné par la technologie et le développement communautaire.'
+        },
+        archy: {
+          name: 'Archy Ntabona',
+          role: 'Co-Fondateur & Opérations',
+          bio: 'Penseur stratégique assurant l\'excellence opérationnelle et le succès des projets.'
+        }
+      }
     },
     contact: {
       badge: 'Contactez-nous',

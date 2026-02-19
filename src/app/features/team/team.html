@@ -14,13 +14,13 @@
   <div class="team-grid">
     <div class="team-member glass-card" *ngFor="let member of teamMembers; let i = index">
       <div class="member-image">
-        <img [src]="member.image" [alt]="member.name">
+        <img [src]="member.image" [alt]="getMember(member.key).name">
         <div class="member-overlay"></div>
       </div>
       <div class="member-info">
-        <h3>{{ member.name }}</h3>
-        <p class="member-role">{{ member.role }}</p>
-        <p class="member-bio">{{ member.bio }}</p>
+        <h3>{{ getMember(member.key).name }}</h3>
+        <p class="member-role">{{ getMember(member.key).role }}</p>
+        <p class="member-bio">{{ getMember(member.key).bio }}</p>
       </div>
     </div>
   </div>

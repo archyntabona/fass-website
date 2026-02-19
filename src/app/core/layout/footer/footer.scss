@@ -41,9 +41,14 @@
     margin-bottom: var(--spacing-md);
     
     .footer-logo-img {
-      height: 50px;
+      height: 60px;
       width: auto;
+      filter: brightness(1.2) contrast(1.1);
     }
+  }
+
+  [data-theme="light"] & .footer-logo-img {
+    filter: none;
   }
 
   &-location {

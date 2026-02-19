@@ -110,8 +110,13 @@
   }
 
   .logo-img {
-    height: 40px;
+    height: 48px;
     width: auto;
+    filter: brightness(1.2) contrast(1.1);
+  }
+
+  [data-theme="light"] & .logo-img {
+    filter: none;
   }
 
   .theme-toggle,
@@ -200,7 +205,7 @@
     }
 
     .logo-img {
-      height: 32px;
+      height: 38px;
     }
 
     &-links {
