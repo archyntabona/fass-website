@@ -1,0 +1,14 @@
+<section class="section" [ngClass]="'section--' + background">
+  <div class="section-orb section-orb--1" *ngIf="background === 'gradient'"></div>
+  <div class="section-orb section-orb--2" *ngIf="background === 'gradient'"></div>
+  <div class="container">
+    <div class="section-header animate-fade-in" *ngIf="title">
+      <span class="section-badge" *ngIf="badge">{{ badge }}</span>
+      <h2 class="section-title">{{ title }}</h2>
+      <p class="section-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+    </div>
+    <div class="section-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</section>
