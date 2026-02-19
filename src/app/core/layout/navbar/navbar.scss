@@ -110,13 +110,19 @@
   }
 
   .logo-img {
-    height: 48px;
+    height: 44px;
     width: auto;
-    filter: brightness(1.2) contrast(1.1);
+    filter: invert(1) brightness(1.1);
   }
 
   [data-theme="light"] & .logo-img {
     filter: none;
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      height: 36px;
+    }
   }
 
   .theme-toggle,
@@ -202,10 +208,6 @@
       width: 36px;
       height: 36px;
       font-size: 0.75rem;
-    }
-
-    .logo-img {
-      height: 38px;
     }
 
     &-links {
