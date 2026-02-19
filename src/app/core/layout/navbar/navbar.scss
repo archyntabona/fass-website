@@ -115,16 +115,6 @@
     filter: invert(1) brightness(1.1);
   }
 
-  [data-theme="light"] & .logo-img {
-    filter: none;
-  }
-
-  @media (max-width: 768px) {
-    .logo-img {
-      height: 44px;
-    }
-  }
-
   .theme-toggle,
   .lang-toggle {
     display: flex;
@@ -193,8 +183,17 @@
   }
 }
 
+// Light mode logo - show original (black text with colored swoosh)
+[data-theme="light"] .navbar .logo-img {
+  filter: none;
+}
+
 @media (max-width: 768px) {
   .navbar {
+    .logo-img {
+      height: 44px;
+    }
+
     &-toggle {
       display: flex;
     }
